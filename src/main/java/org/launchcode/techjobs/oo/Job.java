@@ -35,6 +35,11 @@ public class Job {
     //  match.
 
     @Override
+    public String toString(){
+        return "\nID: " + id + "\nName: " + name + "\nEmployer: " + employer + "\nLocation: " + location +
+                "\nPosition Type: " + positionType + "\nCore competency: " + coreCompetency + "\n";
+    }
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Job)) return false;
