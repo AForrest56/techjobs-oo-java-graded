@@ -52,8 +52,8 @@ public class JobTest {
     public void testToStringStartsAndEndsWithNewLine() {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String testJobString = testJob.toString();
-        assertEquals(testJobString.charAt(0), '\n');
-        assertEquals(testJobString.charAt(testJobString.length()-1), '\n');
+        assertEquals(testJobString.startsWith("\n"), true);
+        assertEquals(testJobString.endsWith("\n"), true);
     }
 
     @Test
@@ -67,7 +67,11 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-
+        Job testJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        String testJobString = testJob.toString();
+        assertEquals(testJobString, "\nID: " + testJob.getId() + "\nName: Data not available" +
+                "\nEmployer: Data not available" + "\nLocation: Data not available" + "\nPosition Type: Data not available" +
+                "\nCore competency: Data not available\n");
     }
 
 }
