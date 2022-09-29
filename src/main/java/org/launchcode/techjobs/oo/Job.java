@@ -53,7 +53,7 @@ public class Job {
             coreCompetency.setValue("Data not available");
         }
         return "\nID: " + id + "\nName: " + name + "\nEmployer: " + employer + "\nLocation: " + location +
-                "\nPosition Type: " + positionType + "\nCore competency: " + coreCompetency + "\n";
+                "\nPosition Type: " + positionType + "\nCore Competency: " + coreCompetency + "\n";
     }
     @Override
     public boolean equals(Object o) {
